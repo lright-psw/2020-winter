@@ -1,0 +1,1862 @@
+// STORE.RANDOM
+
+
+#include "game.h"
+#include "utile.h"
+
+//첫쨰날
+int fristday_random()
+{
+	srand((unsigned)time(NULL));
+
+	random_food = (rand() % 100) + 1;
+	random_water = (rand() % 100) + 1;
+	random_healpack = (rand() % 100) + 1;
+	random_gun = (rand() % 100) + 1;
+
+	if (explore_gowithgun == 1) //총O
+	{
+		if (random_food > 70)
+		{
+			obj.food += 1;
+		}
+		if (random_water > 60 && random_water < 80)
+		{
+			obj.water += 1;
+		}
+		if (random_healpack >= 1)
+		{
+			obj.healpack += 1;
+		}
+		if (random_gun >= 30 && random_gun <= 80)
+		{
+			obj.gun += random_objnumber_middle;
+		}
+	}
+	else if (explore_gowithgun == 0) //총X
+	{
+		if (random_food > 90)
+		{
+			obj.food += 1;
+		}
+		if (random_water > 70 && random_water < 80)
+		{
+			obj.water += 1;
+		}
+		if (random_healpack >= 30)
+		{
+			obj.healpack += 1;
+		}
+		if (random_gun >= 30 && random_gun <= 40)
+		{
+			obj.gun += random_objnumber_high;
+		}
+	}
+}
+//둘쨰날
+int secondday_random()
+{
+	srand((unsigned)time(NULL));
+
+	random_food = (rand() % 100) + 1;
+	random_water = (rand() % 100) + 1;
+	random_healpack = (rand() % 100) + 1;
+	random_gun = (rand() % 100) + 1;
+
+	if (explore_gowithgun == 1) //총O
+	{
+		if (random_food > 70)
+		{
+			obj.food += 1;
+		}
+		if (random_water > 50 && random_water < 80)
+		{
+			obj.water += 1;
+		}
+		if (random_healpack >= 50)
+		{
+			obj.healpack += random_objnumber_low;
+		}
+		if (random_gun >= 30 && random_gun <= 80)
+		{
+			obj.gun += random_objnumber_middle;
+		}
+	}
+	else if (explore_gowithgun == 0) //총X
+	{
+		if (random_food > 80)
+		{
+			obj.food += random_objnumber_low;
+		}
+		if (random_water > 70 && random_water < 80)
+		{
+			obj.water += 1;
+		}
+		if (random_healpack >= 30 && random_healpack <= 40)
+		{
+			obj.healpack += 1;
+		}
+		if (random_gun >= 30 && random_gun <= 40)
+		{
+			obj.gun += random_objnumber_high;
+		}
+	}
+}
+//셋째날
+int thirdday_random()
+{
+	srand((unsigned)time(NULL));
+
+	random_food = (rand() % 100) + 1;
+	random_water = (rand() % 100) + 1;
+	random_healpack = (rand() % 100) + 1;
+	random_gun = (rand() % 100) + 1;
+
+	if (explore_gowithgun == 1) //총O
+	{
+		if (random_food > 65)
+		{
+			obj.food += 1;
+		}
+		if (random_water > 50 && random_water < 80)
+		{
+			obj.water += 1;
+		}
+		if (random_healpack >= 50)
+		{
+			obj.healpack += 1;
+		}
+		if (random_gun >= 30 && random_gun <= 75)
+		{
+			obj.gun += random_objnumber_low;
+		}
+	}
+	else if (explore_gowithgun == 0) //총X
+	{
+		if (random_food > 90)
+		{
+			obj.food += 1;
+		}
+		if (random_water > 70 && random_water < 80)
+		{
+			obj.water += 1;
+		}
+		if (random_healpack >= 30)
+		{
+			obj.healpack += 1;
+		}
+		if (random_gun >= 30 && random_gun <= 40)
+		{
+			obj.gun += random_objnumber_middle;
+		}
+	}
+}
+//넷째날
+int fourthday_random()
+{
+	srand((unsigned)time(NULL));
+
+	random_food = (rand() % 100) + 1;
+	random_water = (rand() % 100) + 1;
+	random_healpack = (rand() % 100) + 1;
+	random_gun = (rand() % 100) + 1;
+
+	if (explore_gowithgun == 1) //총O
+	{
+		if (random_food > 60)
+		{
+			obj.food += 1;
+		}
+		if (random_water > 50 && random_water < 80)
+		{
+			obj.water += 1;
+		}
+		if (random_healpack >= 20 && random_healpack <= 60)
+		{
+			obj.healpack += 1;
+		}
+		if (random_gun >= 30 && random_gun <= 75)
+		{
+			obj.gun += random_objnumber_middle;
+		}
+	}
+	else if (explore_gowithgun == 0) //총X
+	{
+		if (random_food > 90)
+		{
+			obj.food += 1;
+		}
+		if (random_water > 60 && random_water < 80)
+		{
+			obj.water += 1;
+		}
+		if (random_healpack >= 50)
+		{
+			obj.healpack += random_objnumber_low;
+		}
+		if (random_gun >= 30 && random_gun <= 40)
+		{
+			obj.gun += random_objnumber_middle;
+		}
+	}
+}
+//다섯쨰날
+int fifthday_random()
+{
+	srand((unsigned)time(NULL));
+
+	random_food = (rand() % 100) + 1;
+	random_water = (rand() % 100) + 1;
+	random_healpack = (rand() % 100) + 1;
+	random_gun = (rand() % 100) + 1;
+
+	if (explore_gowithgun == 1) //총O
+	{
+		if (random_food > 50)
+		{
+			obj.food += 1;
+		}
+		if (random_water > 30 && random_water < 80)
+		{
+			obj.water += 1;
+		}
+		if (random_healpack >= 20)
+		{
+			obj.healpack += 1;
+		}
+		if (random_gun >= 30 && random_gun <= 60)
+		{
+			obj.gun += random_objnumber_low;
+		}
+	}
+	else if (explore_gowithgun == 0) //총X
+	{
+		if (random_food > 80)
+		{
+			obj.food += 1;
+		}
+		if (random_water > 60 && random_water < 80)
+		{
+			obj.water += 1;
+		}
+		if (random_healpack >= 20)
+		{
+			obj.healpack += 1;
+		}
+		if (random_gun >= 10 && random_gun <= 40)
+		{
+			obj.gun += random_objnumber_low;
+		}
+	}
+}
+//여섯째날
+int sixthday_random()
+{
+	srand((unsigned)time(NULL));
+
+	random_food = (rand() % 100) + 1;
+	random_water = (rand() % 100) + 1;
+	random_healpack = (rand() % 100) + 1;
+	random_gun = (rand() % 100) + 1;
+
+	if (explore_gowithgun == 1) //총O
+	{
+		if (random_food > 60)
+		{
+			obj.food += 1;
+		}
+		if (random_water > 40 && random_water < 80)
+		{
+			obj.water += 1;
+		}
+		if (random_healpack >= 70)
+		{
+			obj.healpack += 1;
+		}
+		if (random_gun >= 50 && random_gun <= 80)
+		{
+			obj.gun += random_objnumber_low;
+		}
+	}
+	else if (explore_gowithgun == 0) //총X
+	{
+		if (random_food > 90)
+		{
+			obj.food += 1;
+		}
+		if (random_water > 70 && random_water < 80)
+		{
+			obj.water += 1;
+		}
+		if (random_healpack >= 30)
+		{
+			obj.healpack += 1;
+		}
+		if (random_gun >= 30 && random_gun <= 40)
+		{
+			obj.gun += random_objnumber_high;
+		}
+	}
+}
+//일곱째날
+int seventhday_random()
+{
+	srand((unsigned)time(NULL));
+
+	random_food = (rand() % 100) + 1;
+	random_water = (rand() % 100) + 1;
+	random_healpack = (rand() % 100) + 1;
+	random_gun = (rand() % 100) + 1;
+
+	if (explore_gowithgun == 1) //총O
+	{
+		if (random_food > 55)
+		{
+			obj.food += 1;
+		}
+		if (random_water > 40 && random_water < 80)
+		{
+			obj.water += 1;
+		}
+		if (random_healpack >= 70)
+		{
+			obj.healpack += 1;
+		}
+		if (random_gun >= 50 && random_gun <= 80)
+		{
+			obj.gun += random_objnumber_middle;
+		}
+	}
+	else if (explore_gowithgun == 0) //총X
+	{
+		if (random_food > 90)
+		{
+			obj.food += 1;
+		}
+		if (random_water > 70 && random_water < 80)
+		{
+			obj.water += 1;
+		}
+		if (random_healpack >= 30)
+		{
+			obj.healpack += 1;
+		}
+		if (random_gun >= 30 && random_gun <= 40)
+		{
+			obj.gun += random_objnumber_high;
+		}
+	}
+}
+//여덟째날
+int eighthday_random()
+{
+	srand((unsigned)time(NULL));
+
+	random_food = (rand() % 100) + 1;
+	random_water = (rand() % 100) + 1;
+	random_healpack = (rand() % 100) + 1;
+	random_gun = (rand() % 100) + 1;
+
+	if (explore_gowithgun == 1) //총O
+	{
+		if (random_food > 55)
+		{
+			obj.food += 1;
+		}
+		if (random_water > 40 && random_water < 80)
+		{
+			obj.water += 1;
+		}
+		if (random_healpack >= 70)
+		{
+			obj.healpack += 1;
+		}
+		if (random_gun >= 50 && random_gun <= 80)
+		{
+			obj.gun += random_objnumber_low;
+		}
+	}
+	else if (explore_gowithgun == 0) //총X
+	{
+		if (random_food > 90)
+		{
+			obj.food += 1;
+		}
+		if (random_water > 70 && random_water < 80)
+		{
+			obj.water += 1;
+		}
+		if (random_healpack >= 30)
+		{
+			obj.healpack += 1;
+		}
+		if (random_gun >= 30 && random_gun <= 40)
+		{
+			obj.gun += random_objnumber_high;
+		}
+	}
+}
+//아홉째날
+int ninthday_random()
+{
+	srand((unsigned)time(NULL));
+
+	random_food = (rand() % 100) + 1;
+	random_water = (rand() % 100) + 1;
+	random_healpack = (rand() % 100) + 1;
+	random_gun = (rand() % 100) + 1;
+
+	if (explore_gowithgun == 1) //총O
+	{
+		if (random_food > 50)
+		{
+			obj.food += 1;
+		}
+		if (random_water > 40 && random_water < 80)
+		{
+			obj.water += 1;
+		}
+		if (random_healpack >= 70)
+		{
+			obj.healpack += 1;
+		}
+		if (random_gun >= 50 && random_gun <= 80)
+		{
+			obj.gun += random_objnumber_low;
+		}
+	}
+	else if (explore_gowithgun == 0) //총X
+	{
+		if (random_food > 90)
+		{
+			obj.food += 1;
+		}
+		if (random_water > 70 && random_water < 80)
+		{
+			obj.water += 1;
+		}
+		if (random_healpack >= 30)
+		{
+			obj.healpack += 1;
+		}
+		if (random_gun >= 30 && random_gun <= 40)
+		{
+			obj.gun += random_objnumber_middle;
+		}
+	}
+}
+//열번째날
+int tenthday_random()
+{
+	srand((unsigned)time(NULL));
+
+	random_food = (rand() % 100) + 1;
+	random_water = (rand() % 100) + 1;
+	random_healpack = (rand() % 100) + 1;
+	random_gun = (rand() % 100) + 1;
+
+	if (explore_gowithgun == 1) //총O
+	{
+		if (random_food > 50)
+		{
+			obj.food += 1;
+		}
+		if (random_water > 30 && random_water < 80)
+		{
+			obj.water += 1;
+		}
+		if (random_healpack >= 60)
+		{
+			obj.healpack += 1;
+		}
+		if (random_gun >= 50 && random_gun <= 80)
+		{
+			obj.gun += random_objnumber_middle;
+		}
+	}
+	else if (explore_gowithgun == 0) //총X
+	{
+		if (random_food > 70)
+		{
+			obj.food += 1;
+		}
+		if (random_water > 50 && random_water < 80)
+		{
+			obj.water += 1;
+		}
+		if (random_healpack >= 50)
+		{
+			obj.healpack += 1;
+		}
+		if (random_gun >= 30 && random_gun <= 40)
+		{
+			obj.gun += random_objnumber_high;
+		}
+	}
+}
+//열한번째날
+int eleventhday_random()
+{
+	srand((unsigned)time(NULL));
+
+	random_food = (rand() % 100) + 1;
+	random_water = (rand() % 100) + 1;
+	random_healpack = (rand() % 100) + 1;
+	random_gun = (rand() % 100) + 1;
+
+	if (explore_gowithgun == 1) //총O
+	{
+		if (random_food > 40)
+		{
+			obj.food += 1;
+		}
+		if (random_water > 20 && random_water < 80)
+		{
+			obj.water += 1;
+		}
+		if (random_healpack >= 50)
+		{
+			obj.healpack += 1;
+		}
+		if (random_gun >= 60 && random_gun <= 80)
+		{
+			obj.gun += random_objnumber_high;
+		}
+	}
+	else if (explore_gowithgun == 0) //총X
+	{
+		if (random_food > 70)
+		{
+			obj.food += 1;
+		}
+		if (random_water > 50 && random_water < 80)
+		{
+			obj.water += 1;
+		}
+		if (random_healpack >= 50)
+		{
+			obj.healpack += 1;
+		}
+		if (random_gun >= 30 && random_gun <= 40)
+		{
+			obj.gun += random_objnumber_high;
+		}
+	}
+}
+//열두번째날
+int twelfthday_random()
+{
+	srand((unsigned)time(NULL));
+
+	random_food = (rand() % 100) + 1;
+	random_water = (rand() % 100) + 1;
+	random_healpack = (rand() % 100) + 1;
+	random_gun = (rand() % 100) + 1;
+
+	if (explore_gowithgun == 1) //총O
+	{
+		if (random_food > 80)
+		{
+			obj.food += 1;
+		}
+		if (random_water > 60 && random_water < 80)
+		{
+			obj.water += 1;
+		}
+		if (random_healpack >= 90)
+		{
+			obj.healpack += 1;
+		}
+		if (random_gun >= 60 && random_gun <= 80)
+		{
+			obj.gun += random_objnumber_middle;
+		}
+	}
+	else if (explore_gowithgun == 0) //총X
+	{
+		if (random_food > 95)
+		{
+			obj.food += 1;
+		}
+		if (random_water > 75 && random_water < 80)
+		{
+			obj.water += 1;
+		}
+		if (random_healpack >= 80)
+		{
+			obj.healpack += 1;
+		}
+		if (random_gun >= 30 && random_gun <= 40)
+		{
+			obj.gun += random_objnumber_high;
+		}
+	}
+}
+//열세번째날
+int thirteenthday_random()
+{
+	srand((unsigned)time(NULL));
+
+	random_food = (rand() % 100) + 1;
+	random_water = (rand() % 100) + 1;
+	random_healpack = (rand() % 100) + 1;
+	random_gun = (rand() % 100) + 1;
+
+	if (explore_gowithgun == 1) //총O
+	{
+		if (random_food > 40)
+		{
+			obj.food += 1;
+		}
+		if (random_water > 20 && random_water < 80)
+		{
+			obj.water += 1;
+		}
+		if (random_healpack >= 80)
+		{
+			obj.healpack += 1;
+		}
+		if (random_gun >= 60 && random_gun <= 80)
+		{
+			obj.gun += random_objnumber_middle;
+		}
+	}
+	else if (explore_gowithgun == 0) //총X
+	{
+		if (random_food > 70)
+		{
+			obj.food += 1;
+		}
+		if (random_water > 50 && random_water < 80)
+		{
+			obj.water += 1;
+		}
+		if (random_healpack >= 50)
+		{
+			obj.healpack += 1;
+		}
+		if (random_gun >= 30 && random_gun <= 40)
+		{
+			obj.gun += random_objnumber_low;
+		}
+	}
+}
+//열네번째날
+int fourteenthday_random()
+{
+	srand((unsigned)time(NULL));
+
+	random_food = (rand() % 100) + 1;
+	random_water = (rand() % 100) + 1;
+	random_healpack = (rand() % 100) + 1;
+	random_gun = (rand() % 100) + 1;
+
+	if (explore_gowithgun == 1) //총O
+	{
+		if (random_food > 80)
+		{
+			obj.food += 1;
+		}
+		if (random_water > 70 && random_water < 80)
+		{
+			obj.water += 1;
+		}
+		if (random_healpack >= 80)
+		{
+			obj.healpack += 1;
+		}
+		if (random_gun >= 60 && random_gun <= 80)
+		{
+			obj.gun += random_objnumber_high;
+		}
+	}
+	else if (explore_gowithgun == 0) //총X
+	{
+		if (random_food > 90)
+		{
+			obj.food += 1;
+		}
+		if (random_water > 70 && random_water < 80)
+		{
+			obj.water += 1;
+		}
+		if (random_healpack >= 80)
+		{
+			obj.healpack += 1;
+		}
+		if (random_gun >= 30 && random_gun <= 40)
+		{
+			obj.gun += random_objnumber_high;
+		}
+	}
+}
+//15
+int fifteenday_rabdom()
+{
+	srand((unsigned)time(NULL));
+
+	random_food = (rand() % 100) + 1;
+	random_water = (rand() % 100) + 1;
+	random_healpack = (rand() % 100) + 1;
+	random_gun = (rand() % 100) + 1;
+
+	if (explore_gowithgun == 1) //총O
+	{
+		if (random_food > 50)
+		{
+			obj.food += 1;
+		}
+		if (random_water > 30 && random_water < 80)
+		{
+			obj.water += 1;
+		}
+		if (random_healpack >= 60)
+		{
+			obj.healpack += 1;
+		}
+		if (random_gun >= 60 && random_gun <= 70)
+		{
+			obj.gun += random_objnumber_middle;
+		}
+	}
+	else if (explore_gowithgun == 0) //총X
+	{
+		if (random_food > 70)
+		{
+			obj.food += 1;
+		}
+		if (random_water > 20 && random_water < 60)
+		{
+			obj.water += 1;
+		}
+		if (random_healpack >= 50)
+		{
+			obj.healpack += 1;
+		}
+		if (random_gun >= 30 && random_gun <= 50)
+		{
+			obj.gun += random_objnumber_low;
+		}
+	}
+
+}
+
+
+
+//16
+int sixteenday_rabdom()
+{
+	srand((unsigned)time(NULL));
+
+	random_food = (rand() % 100) + 1;
+	random_water = (rand() % 100) + 1;
+	random_healpack = (rand() % 100) + 1;
+	random_gun = (rand() % 100) + 1;
+
+	if (explore_gowithgun == 1) //총O
+	{
+		if (random_food > 50)
+		{
+			obj.food += 1;
+		}
+		if (random_water > 40 && random_water < 80)
+		{
+			obj.water += 1;
+		}
+		if (random_healpack >= 60)
+		{
+			obj.healpack += 1;
+		}
+		if (random_gun >= 50 && random_gun <= 70)
+		{
+			obj.gun += random_objnumber_middle;
+		}
+	}
+	else if (explore_gowithgun == 0) //총X
+	{
+		if (random_food > 40)
+		{
+			obj.food += 1;
+		}
+		if (random_water > 20 && random_water < 60)
+		{
+			obj.water += 1;
+		}
+		if (random_healpack >= 50)
+		{
+			obj.healpack += 1;
+		}
+		if (random_gun >= 20 && random_gun <= 50)
+		{
+			obj.gun += random_objnumber_low;
+		}
+	}
+}
+
+//17
+
+int seventeenday_rabdom()
+{
+	srand((unsigned)time(NULL));
+
+	random_food = (rand() % 100) + 1;
+	random_water = (rand() % 100) + 1;
+	random_healpack = (rand() % 100) + 1;
+	random_gun = (rand() % 100) + 1;
+
+	if (explore_gowithgun == 1) //총O
+	{
+		if (random_food > 90)
+		{
+			obj.food += 1;
+		}
+		if (random_water > 40 && random_water < 50)
+		{
+			obj.water += 1;
+		}
+		if (random_healpack >= 80)
+		{
+			obj.healpack += 1;
+		}
+		if (random_gun >= 60 && random_gun <= 70)
+		{
+			obj.gun += random_objnumber_middle;
+		}
+	}
+	else if (explore_gowithgun == 0) //총X
+	{
+		if (random_food > 70)
+		{
+			obj.food += 1;
+		}
+		if (random_water > 20 && random_water < 60)
+		{
+			obj.water += 1;
+		}
+		if (random_healpack >= 50)
+		{
+			obj.healpack += 1;
+		}
+		if (random_gun >= 30 && random_gun <= 50)
+		{
+			obj.gun += random_objnumber_low;
+		}
+	}
+}
+//18
+int eighteenday_rabdom()
+{
+	srand((unsigned)time(NULL));
+
+	random_food = (rand() % 100) + 1;
+	random_water = (rand() % 100) + 1;
+	random_healpack = (rand() % 100) + 1;
+	random_gun = (rand() % 100) + 1;
+
+	if (explore_gowithgun == 1) //총O
+	{
+		if (random_food > 50)
+		{
+			obj.food += 1;
+		}
+		if (random_water > 30 && random_water < 80)
+		{
+			obj.water += 1;
+		}
+		if (random_healpack >= 60)
+		{
+			obj.healpack += 1;
+		}
+		if (random_gun >= 60 && random_gun <= 70)
+		{
+			obj.gun += random_objnumber_middle;
+		}
+	}
+	else if (explore_gowithgun == 0) //총X
+	{
+		if (random_food > 70)
+		{
+			obj.food += 1;
+		}
+		if (random_water > 20 && random_water < 60)
+		{
+			obj.water += 1;
+		}
+		if (random_healpack >= 50)
+		{
+			obj.healpack += 1;
+		}
+		if (random_gun >= 30 && random_gun <= 50)
+		{
+			obj.gun += random_objnumber_low;
+		}
+	}
+}
+
+
+//19
+
+int nineteenday_rabdom()
+{
+	srand((unsigned)time(NULL));
+
+	random_food = (rand() % 100) + 1;
+	random_water = (rand() % 100) + 1;
+	random_healpack = (rand() % 100) + 1;
+	random_gun = (rand() % 100) + 1;
+
+	if (explore_gowithgun == 1) //총O
+	{
+		if (random_food > 50)
+		{
+			obj.food += 1;
+		}
+		if (random_water > 30 && random_water < 80)
+		{
+			obj.water += 1;
+		}
+		if (random_healpack >= 60)
+		{
+			obj.healpack += 1;
+		}
+		if (random_gun >= 60 && random_gun <= 70)
+		{
+			obj.gun += random_objnumber_middle;
+		}
+	}
+	else if (explore_gowithgun == 0) //총X
+	{
+		if (random_food > 70)
+		{
+			obj.food += 1;
+		}
+		if (random_water > 20 && random_water < 60)
+		{
+			obj.water += 1;
+		}
+		if (random_healpack >= 50)
+		{
+			obj.healpack += 1;
+		}
+		if (random_gun >= 30 && random_gun <= 50)
+		{
+			obj.gun += random_objnumber_low;
+		}
+	}
+}
+//20
+
+int twentyday_rabdom()
+{
+	srand((unsigned)time(NULL));
+
+	random_food = (rand() % 100) + 1;
+	random_water = (rand() % 100) + 1;
+	random_healpack = (rand() % 100) + 1;
+	random_gun = (rand() % 100) + 1;
+
+	if (explore_gowithgun == 1) //총O
+	{
+		if (random_food > 50)
+		{
+			obj.food += 1;
+		}
+		if (random_water > 30 && random_water < 80)
+		{
+			obj.water += 1;
+		}
+		if (random_healpack >= 60)
+		{
+			obj.healpack += 1;
+		}
+		if (random_gun >= 60 && random_gun <= 70)
+		{
+			obj.gun += random_objnumber_middle;
+		}
+	}
+	else if (explore_gowithgun == 0) //총X
+	{
+		if (random_food > 70)
+		{
+			obj.food += 1;
+		}
+		if (random_water > 20 && random_water < 60)
+		{
+			obj.water += 1;
+		}
+		if (random_healpack >= 50)
+		{
+			obj.healpack += 1;
+		}
+		if (random_gun >= 30 && random_gun <= 50)
+		{
+			obj.gun += random_objnumber_low;
+		}
+	}
+}
+
+
+//21
+
+int twentyoneday_rabdom()
+{
+	srand((unsigned)time(NULL));
+
+	random_food = (rand() % 100) + 1;
+	random_water = (rand() % 100) + 1;
+	random_healpack = (rand() % 100) + 1;
+	random_gun = (rand() % 100) + 1;
+
+	if (explore_gowithgun == 1) //총O
+	{
+		if (random_food > 50)
+		{
+			obj.food += 1;
+		}
+		if (random_water > 30 && random_water < 80)
+		{
+			obj.water += 1;
+		}
+		if (random_healpack >= 60)
+		{
+			obj.healpack += 1;
+		}
+		if (random_gun >= 60 && random_gun <= 70)
+		{
+			obj.gun += random_objnumber_middle;
+		}
+	}
+	else if (explore_gowithgun == 0) //총X
+	{
+		if (random_food > 70)
+		{
+			obj.food += 1;
+		}
+		if (random_water > 20 && random_water < 60)
+		{
+			obj.water += 1;
+		}
+		if (random_healpack >= 50)
+		{
+			obj.healpack += 1;
+		}
+		if (random_gun >= 30 && random_gun <= 50)
+		{
+			obj.gun += random_objnumber_low;
+		}
+	}
+}
+//22
+
+int twentytwoday_rabdom()
+{
+	srand((unsigned)time(NULL));
+
+	random_food = (rand() % 100) + 1;
+	random_water = (rand() % 100) + 1;
+	random_healpack = (rand() % 100) + 1;
+	random_gun = (rand() % 100) + 1;
+
+	if (explore_gowithgun == 1) //총O
+	{
+		if (random_food > 50)
+		{
+			obj.food += 1;
+		}
+		if (random_water > 30 && random_water < 80)
+		{
+			obj.water += 1;
+		}
+		if (random_healpack >= 60)
+		{
+			obj.healpack += 1;
+		}
+		if (random_gun >= 60 && random_gun <= 70)
+		{
+			obj.gun += random_objnumber_middle;
+		}
+	}
+	else if (explore_gowithgun == 0) //총X
+	{
+		if (random_food > 70)
+		{
+			obj.food += 1;
+		}
+		if (random_water > 20 && random_water < 60)
+		{
+			obj.water += 1;
+		}
+		if (random_healpack >= 50)
+		{
+			obj.healpack += 1;
+		}
+		if (random_gun >= 30 && random_gun <= 50)
+		{
+			obj.gun += random_objnumber_low;
+		}
+	}
+}
+//23
+int twentythreeday_rabdom()
+{
+	srand((unsigned)time(NULL));
+
+	random_food = (rand() % 100) + 1;
+	random_water = (rand() % 100) + 1;
+	random_healpack = (rand() % 100) + 1;
+	random_gun = (rand() % 100) + 1;
+
+	if (explore_gowithgun == 1) //총O
+	{
+		if (random_food > 50)
+		{
+			obj.food += 1;
+		}
+		if (random_water > 30 && random_water < 80)
+		{
+			obj.water += 1;
+		}
+		if (random_healpack >= 60)
+		{
+			obj.healpack += 1;
+		}
+		if (random_gun >= 60 && random_gun <= 70)
+		{
+			obj.gun += random_objnumber_middle;
+		}
+	}
+	else if (explore_gowithgun == 0) //총X
+	{
+		if (random_food > 70)
+		{
+			obj.food += 1;
+		}
+		if (random_water > 20 && random_water < 60)
+		{
+			obj.water += 1;
+		}
+		if (random_healpack >= 50)
+		{
+			obj.healpack += 1;
+		}
+		if (random_gun >= 30 && random_gun <= 50)
+		{
+			obj.gun += random_objnumber_low;
+		}
+	}
+
+}
+
+//24
+
+int twentyfourday_rabdom()
+{
+	srand((unsigned)time(NULL));
+
+	random_food = (rand() % 100) + 1;
+	random_water = (rand() % 100) + 1;
+	random_healpack = (rand() % 100) + 1;
+	random_gun = (rand() % 100) + 1;
+
+	if (explore_gowithgun == 1) //총O
+	{
+		if (random_food > 50)
+		{
+			obj.food += 1;
+		}
+		if (random_water > 30 && random_water < 80)
+		{
+			obj.water += 1;
+		}
+		if (random_healpack >= 60)
+		{
+			obj.healpack += 1;
+		}
+		if (random_gun >= 60 && random_gun <= 70)
+		{
+			obj.gun += random_objnumber_middle;
+		}
+	}
+	else if (explore_gowithgun == 0) //총X
+	{
+		if (random_food > 70)
+		{
+			obj.food += 1;
+		}
+		if (random_water > 20 && random_water < 60)
+		{
+			obj.water += 1;
+		}
+		if (random_healpack >= 50)
+		{
+			obj.healpack += 1;
+		}
+		if (random_gun >= 30 && random_gun <= 50)
+		{
+			obj.gun += random_objnumber_low;
+		}
+	}
+}
+//25
+int twentyfiveday_rabdom()
+{
+	srand((unsigned)time(NULL));
+
+	random_food = (rand() % 100) + 1;
+	random_water = (rand() % 100) + 1;
+	random_healpack = (rand() % 100) + 1;
+	random_gun = (rand() % 100) + 1;
+
+	if (explore_gowithgun == 1) //총O
+	{
+		if (random_food > 50)
+		{
+			obj.food += 1;
+		}
+		if (random_water > 30 && random_water < 80)
+		{
+			obj.water += 1;
+		}
+		if (random_healpack >= 60)
+		{
+			obj.healpack += 1;
+		}
+		if (random_gun >= 60 && random_gun <= 70)
+		{
+			obj.gun += random_objnumber_middle;
+		}
+	}
+	else if (explore_gowithgun == 0) //총X
+	{
+		if (random_food > 70)
+		{
+			obj.food += 1;
+		}
+		if (random_water > 20 && random_water < 60)
+		{
+			obj.water += 1;
+		}
+		if (random_healpack >= 50)
+		{
+			obj.healpack += 1;
+		}
+		if (random_gun >= 30 && random_gun <= 50)
+		{
+			obj.gun += random_objnumber_low;
+		}
+	}
+}
+//26
+int twentysixday_rabdom()
+{
+	srand((unsigned)time(NULL));
+
+	random_food = (rand() % 100) + 1;
+	random_water = (rand() % 100) + 1;
+	random_healpack = (rand() % 100) + 1;
+	random_gun = (rand() % 100) + 1;
+
+	if (explore_gowithgun == 1) //총O
+	{
+		if (random_food > 50)
+		{
+			obj.food += 1;
+		}
+		if (random_water > 30 && random_water < 80)
+		{
+			obj.water += 1;
+		}
+		if (random_healpack >= 60)
+		{
+			obj.healpack += 1;
+		}
+		if (random_gun >= 60 && random_gun <= 70)
+		{
+			obj.gun += random_objnumber_middle;
+		}
+	}
+	else if (explore_gowithgun == 0) //총X
+	{
+		if (random_food > 70)
+		{
+			obj.food += 1;
+		}
+		if (random_water > 20 && random_water < 60)
+		{
+			obj.water += 1;
+		}
+		if (random_healpack >= 50)
+		{
+			obj.healpack += 1;
+		}
+		if (random_gun >= 30 && random_gun <= 50)
+		{
+			obj.gun += random_objnumber_low;
+		}
+	}
+}
+
+//27
+int twentysevenday_rabdom()
+{
+	srand((unsigned)time(NULL));
+
+	random_food = (rand() % 100) + 1;
+	random_water = (rand() % 100) + 1;
+	random_healpack = (rand() % 100) + 1;
+	random_gun = (rand() % 100) + 1;
+
+	if (explore_gowithgun == 1) //총O
+	{
+		if (random_food > 50)
+		{
+			obj.food += 1;
+		}
+		if (random_water > 30 && random_water < 80)
+		{
+			obj.water += 1;
+		}
+		if (random_healpack >= 60)
+		{
+			obj.healpack += 1;
+		}
+		if (random_gun >= 60 && random_gun <= 70)
+		{
+			obj.gun += random_objnumber_middle;
+		}
+	}
+	else if (explore_gowithgun == 0) //총X
+	{
+		if (random_food > 70)
+		{
+			obj.food += 1;
+		}
+		if (random_water > 20 && random_water < 60)
+		{
+			obj.water += 1;
+		}
+		if (random_healpack >= 50)
+		{
+			obj.healpack += 1;
+		}
+		if (random_gun >= 30 && random_gun <= 50)
+		{
+			obj.gun += random_objnumber_low;
+		}
+	}
+}
+
+//28
+
+int twentyeightday_rabdom()
+{
+	srand((unsigned)time(NULL));
+
+	random_food = (rand() % 100) + 1;
+	random_water = (rand() % 100) + 1;
+	random_healpack = (rand() % 100) + 1;
+	random_gun = (rand() % 100) + 1;
+
+	if (explore_gowithgun == 1) //총O
+	{
+		if (random_food > 50)
+		{
+			obj.food += 1;
+		}
+		if (random_water > 30 && random_water < 80)
+		{
+			obj.water += 1;
+		}
+		if (random_healpack >= 60)
+		{
+			obj.healpack += 1;
+		}
+		if (random_gun >= 60 && random_gun <= 70)
+		{
+			obj.gun += random_objnumber_middle;
+		}
+	}
+	else if (explore_gowithgun == 0) //총X
+	{
+		if (random_food > 70)
+		{
+			obj.food += 1;
+		}
+		if (random_water > 20 && random_water < 60)
+		{
+			obj.water += 1;
+		}
+		if (random_healpack >= 50)
+		{
+			obj.healpack += 1;
+		}
+		if (random_gun >= 30 && random_gun <= 50)
+		{
+			obj.gun += random_objnumber_low;
+		}
+	}
+}
+
+//29
+
+int twentynineday_rabdom()
+{
+	srand((unsigned)time(NULL));
+
+	random_food = (rand() % 100) + 1;
+	random_water = (rand() % 100) + 1;
+	random_healpack = (rand() % 100) + 1;
+	random_gun = (rand() % 100) + 1;
+
+	if (explore_gowithgun == 1) //총O
+	{
+		if (random_food > 50)
+		{
+			obj.food += 1;
+		}
+		if (random_water > 30 && random_water < 80)
+		{
+			obj.water += 1;
+		}
+		if (random_healpack >= 60)
+		{
+			obj.healpack += 1;
+		}
+		if (random_gun >= 60 && random_gun <= 70)
+		{
+			obj.gun += random_objnumber_middle;
+		}
+	}
+	else if (explore_gowithgun == 0) //총X
+	{
+		if (random_food > 70)
+		{
+			obj.food += 1;
+		}
+		if (random_water > 20 && random_water < 60)
+		{
+			obj.water += 1;
+		}
+		if (random_healpack >= 50)
+		{
+			obj.healpack += 1;
+		}
+		if (random_gun >= 30 && random_gun <= 50)
+		{
+			obj.gun += random_objnumber_low;
+		}
+	}
+}
+
+
+// 랜덤 인카운터
+int special_event()
+{
+	int x = 19;
+	int y = 15;
+	int X = 25;
+	int Y = 25;
+	srand((unsigned)time(NULL));
+	int rand_sevent = (rand() % 100) + 1;
+	if (rand_sevent <= 5 || days == 6)
+	{
+		gotoxy(x, y);
+		printf("문을 두드리는 소리가 나서 확인해 봤더니 문 밖엔 낯선 보따리 상인이 있었다");
+		gotoxy(x, y + 2);
+		printf("그는 우리에게 한 거래를 제안했다.");
+		gotoxy(x + 6, y + 4);
+		printf("<나에게 물 한 개를 준다면, 식량을 두개 주도록 하지>");
+		gotoxy(X, Y);
+		printf("> 거래한다");
+		gotoxy(X + 50, Y);
+		printf("  거래하지 않는다");
+		special_num = 1;
+		while (1)
+		{
+			int n = keycontrol();
+			switch (n)
+			{
+			case LEFT:
+			{
+				if (X > 25)
+				{
+					gotoxy(X, Y);
+					printf("  ");
+					for (int i = 0; i < 50; i++)
+					{
+						X--;
+					}
+					gotoxy(X, Y);
+					printf(">");
+
+				}
+				break;
+			}
+
+			case RIGHT:
+			{
+				if (X < 75)
+				{
+					gotoxy(X, Y);
+					printf("  ");
+					for (int i = 0; i < 50; i++)
+					{
+						X++;
+					}
+					gotoxy(X, Y);
+					printf(">");
+
+				}
+				break;
+			}
+			case SELECT:
+			{
+				return X - 25;
+			}
+			}
+
+		}
+	}
+	else if (rand_sevent < 50 && rand_sevent > 52 || days == 11)
+	{
+		gotoxy(x, y);
+		printf("건장해 보이는 남성이 찾아왔다. 자신이 군인이라며 무기를 빌려달라고 한다.");
+		gotoxy(x, y + 2);
+		printf("무기를 빌려주면 크게 보답을 해주겠다고 한다. 총을 가지고 있긴 하지만... 빌려주어야 할까?");
+		gotoxy(x + 6, y + 4);
+		printf("<난 군인일세 총과 물자를 조금만 빌려준다면 명예를 걸고 반드시 보답하겠네>");
+		gotoxy(X, Y);
+		printf("> 빌려준다");
+		gotoxy(X + 50, Y);
+		printf("  빌려주지 않는다");
+		special_num = 2;
+		while (1)
+		{
+			int n = keycontrol();
+			switch (n)
+			{
+			case LEFT:
+			{
+				if (X > 25)
+				{
+					gotoxy(X, Y);
+					printf("  ");
+					for (int i = 0; i < 50; i++)
+					{
+						X--;
+					}
+					gotoxy(X, Y);
+					printf(">");
+
+				}
+				break;
+			}
+
+			case RIGHT:
+			{
+				if (X < 75)
+				{
+					gotoxy(X, Y);
+					printf("  ");
+					for (int i = 0; i < 50; i++)
+					{
+						X++;
+					}
+					gotoxy(X, Y);
+					printf(">");
+
+				}
+				break;
+			}
+			case SELECT:
+			{
+				return X - 25;
+			}
+			}
+
+		}
+	}
+	else if (rand_sevent > 96 || days == 4)
+	{
+		gotoxy(x, y);
+		printf("바깥에서 소란스러운 소리가 들린다.");
+		gotoxy(x, y + 2);
+		printf("사이렌 소리와 헬기 소리인거 같은데...");
+		gotoxy(x, y + 4);
+		printf("바깥에 나가서 상황을 살펴볼까??");
+		gotoxy(X, Y);
+		printf("> 나가본다");
+		gotoxy(X + 50, Y);
+		printf("  나가보지 않는다");
+		special_num = 3;
+		while (1)
+		{
+			int n = keycontrol();
+			switch (n)
+			{
+			case LEFT:
+			{
+				if (X > 25)
+				{
+					gotoxy(X, Y);
+					printf("  ");
+					for (int i = 0; i < 50; i++)
+					{
+						X--;
+					}
+					gotoxy(X, Y);
+					printf(">");
+
+				}
+				break;
+			}
+
+			case RIGHT:
+			{
+				if (X < 75)
+				{
+					gotoxy(X, Y);
+					printf("  ");
+					for (int i = 0; i < 50; i++)
+					{
+						X++;
+					}
+					gotoxy(X, Y);
+					printf(">");
+
+				}
+				break;
+			}
+			case SELECT:
+			{
+				return X - 25;
+			}
+			}
+
+		}
+	}
+	else if (rand_sevent >= 70 && rand_sevent <= 73 || days == 7)
+	{
+		gotoxy(x, y);
+		printf("정찰을 마치고 돌아오는 길에, 자신이 의사라고");
+		gotoxy(x, y + 1);
+		printf("주장하는 어느 부랑자를 만났다.");
+		gotoxy(x, y + 2);
+		printf("그 의사가 말하기를 자신 방공호로 데려가 준다면");
+		gotoxy(x, y + 3);
+		printf("다친 사람을 치료해 준다고 한다.어떻게 할까 ? ");
+		gotoxy(X, Y);
+		printf("> 데려간다");
+		gotoxy(X + 50, Y);
+		printf("  데려가지 않는다");
+		special_num = 4;
+		while (1)
+		{
+			int n = keycontrol();
+			switch (n)
+			{
+			case LEFT:
+			{
+				if (X > 25)
+				{
+					gotoxy(X, Y);
+					printf("  ");
+					for (int i = 0; i < 50; i++)
+					{
+						X--;
+					}
+					gotoxy(X, Y);
+					printf(">");
+
+				}
+				break;
+			}
+
+			case RIGHT:
+			{
+				if (X < 75)
+				{
+					gotoxy(X, Y);
+					printf("  ");
+					for (int i = 0; i < 50; i++)
+					{
+						X++;
+					}
+					gotoxy(X, Y);
+					printf(">");
+
+				}
+				break;
+			}
+			case SELECT:
+			{
+				return X - 25;
+			}
+			}
+
+		}
+	}
+
+}
+void special_result(struct character_hp* all_hp, struct object* all_obj)
+{
+	int x = 10;
+	int y = 24;
+	if (special_num == 1)
+	{
+		if (special_select == 0)
+		{
+			system("cls");
+			selectdraw();
+			gotoxy(x, y);
+			printf("좋은 생각이야, 친구들 ");
+			all_obj->water -= 1;
+			all_obj->food += 2;
+		}
+		else if (special_select == 50)
+		{
+			system("cls");
+			selectdraw();
+			gotoxy(x, y);
+			printf("어쩔 수 없지, 당신들은 좋은 기회를 놓친거야 ! ");
+			hidden += 1;
+		}
+		while (1)
+		{
+			gotoxy(x, y + 3);
+			printf("ENTER키를 누르시오......");
+			if (keycontrol() == SELECT)
+			{
+				break;
+			}
+		}
+		system("cls");
+	}
+	else if (special_num == 2)
+	{
+		if (special_select == 0)
+		{
+			system("cls");
+			selectdraw();
+			gotoxy(x, y);
+			printf("고맙소.. 이 은혜 반드시 보답하겠소 ");
+			all_obj->gun -= 1;
+			all_obj->food -= 2;
+			all_obj->water -= 2;
+			hidden += 1;
+		}
+		else if (special_select == 50)
+		{
+			system("cls");
+			selectdraw();
+			gotoxy(x, y);
+			printf("본좌를 믿지 못 한다면 어쩔수 없지....");
+			hidden -= 20;
+		}
+		while (1)
+		{
+			gotoxy(x, y + 3);
+			printf("ENTER키를 누르시오......");
+			if (keycontrol() == SELECT)
+			{
+				break;
+			}
+		}
+		system("cls");
+	}
+	else if (special_num == 3)
+	{
+		if (special_select == 0)
+		{
+			system("cls");
+			selectdraw();
+			gotoxy(x, y);
+			printf("밖에 나와보니 무법자들의 함정이였다");
+			all_hp->a_hp -= 1;
+			all_hp->b_hp -= 1;
+			all_hp->c_hp -= 1;
+		}
+		else if (special_select == 50)
+		{
+			system("cls");
+			selectdraw();
+			gotoxy(x, y);
+			printf("갑자기 소리가 멈췄고, 밖에서 비명소리가 들렸다..... ");
+			hidden += 1;
+		}
+		while (1)
+		{
+			gotoxy(x, y + 3);
+			printf("ENTER키를 누르시오......");
+			if (keycontrol() == SELECT)
+			{
+				break;
+			}
+		}
+		system("cls");
+	}
+	else if (special_num == 4)
+	{
+		if (special_select == 0)
+		{
+			system("cls");
+			selectdraw();
+			gotoxy(x, y);
+			printf("이젠 괜찮을거야, 친구들. 인연이 닿는다면 또 보자구");
+			all_hp->a_hp += 1;
+			all_hp->b_hp += 1;
+			all_hp->c_hp += 1;
+			hidden += 1;
+		}
+		else if (special_select == 50)
+		{
+			system("cls");
+			selectdraw();
+			gotoxy(x, y);
+			printf("아쉽지만 어쩔수 없군 치료 대신이걸 주도록하지......인연이 닿는다면 언젠간 다시 보게되겠지");
+			all_obj->healpack += 1;
+		}
+		while (1)
+		{
+			gotoxy(x, y + 3);
+			printf("ENTER키를 누르시오......");
+			if (keycontrol() == SELECT)
+			{
+				break;
+			}
+		}
+		system("cls");
+	}
+}
+
+void nomal_result(struct character_hp* all_hp, struct object* all_obj)
+{
+	if (nomal_num == 1)
+	{
+		all_obj->food += 2;
+	}
+	else if (nomal_num == 2)
+	{
+		if (who_explore == 1)
+			all_hp->a_hp -= 1;
+		else if (who_explore == 2)
+			all_hp->b_hp -= 1;
+		else if (who_explore == 2)
+			all_hp->c_hp -= 1;
+	}
+	else if (nomal_num == 3)
+	{
+		all_obj->water += 1;
+		all_obj->healpack += 1;
+	}
+	else if (nomal_num == 4)
+	{
+		all_obj->food += 1;
+		all_obj->gun += 1;
+	}
+	else if (nomal_num == 5)
+	{
+		all_obj->food -= 2;
+		all_obj->water -= 2;
+	}
+}
