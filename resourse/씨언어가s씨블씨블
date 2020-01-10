@@ -1,0 +1,43 @@
+//game.
+
+
+#include "game.h"
+#include "utile.h"
+
+
+
+
+int keycontrol()
+{
+	char temp = getch();
+	if (temp == '↑')
+	{
+		return UP;
+	}
+	else if (temp == '←')
+	{
+		return LEFT;
+	}
+	else if (temp == '↓')
+	{
+		return DOWN;
+	}
+	else if (temp == '→')
+	{
+		return RIGHT;
+	}
+	else if (temp == '\n')
+	{
+		return SELECT;
+	}
+}
+
+int object_draw()
+{
+	int x = 1;
+	int y = 1;
+	gotoxy(x, y);
+
+}
+
+
