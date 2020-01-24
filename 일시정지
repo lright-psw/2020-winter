@@ -1,0 +1,79 @@
+#include "function.h"
+
+void game() {
+	int x = 38, y = 47;         //아래 "▲" 넣는 커서 위치	Y=	별이 떨어지는 전체 위치 좌표
+	int score = 0;
+	int is_collison = 0;
+	FramePrinter_forEmpty();
+	while (1) {
+		is_collison = StarMove(x);
+		FramePrinter();
+		AddStar();
+		if (GetAsyncKeyState(VK_LEFT) & 0x8000) { // 키보드 왼쪽 눌렀을 때 이동
+
+			if (x < 1) {// 벽 넘어가지 않게
+				x = 1;
+			}x--;
+		}
+		if (GetAsyncKeyState(VK_RIGHT) & 0x8000) { // 키보드 오른쪽 눌렀을 때 이동
+			if (x > 77) { // 벽 넘어가지 않게
+				x = 77;
+			}x++;
+		}
+	/*	switch (temp) {
+		case 'P': //(P)대문자 눌렀을때
+		case 'p': //p소문자 눌렀을때
+			asdf(); //일시정지
+			break;
+			while (kbhit())getch();
+		}
+		*/
+		GotoXY(x, y);
+		printf("▲");
+		Sleep(50);
+		card(0, 0);
+		GotoXY(0, 48);
+		stone(); // "■" *40   //printf로 계속해서 벽을 뿌려줌
+		GotoXY(0, 49);
+			printf("SCORE : %d", score);
+			score += 1;
+
+		if (score == 150) {
+			Level2();
+		}
+		GotoXY(69, 49);
+		{
+			if (score == Final)
+				break;
+			printf("USER: ");
+		}
+		if (is_collison == 1)
+			break;
+	}
+	if (is_collison == 1) {
+
+		GameOver();
+		system("cls");
+	}
+
+	else
+		GameClear();
+}
+
+
+void asdf(void) { //게임 일시정지 함수 
+	int x = 5;
+	int y = 5;
+		gotoxy(x, y + 0); printf("▤▤▤▤▤▤▤▤▤▤▤▤▤▤▤▤▤");
+		gotoxy(x, y + 1); printf("▤                              ▤");
+		gotoxy(x, y + 2); printf("▤  +-----------------------+   ▤");
+		gotoxy(x, y + 3); printf("▤  |       P A U S E       |   ▤");
+		gotoxy(x, y + 4); printf("▤  +-----------------------+   ▤");
+		gotoxy(x, y + 5); printf("▤  Press any key to resume..   ▤");
+		gotoxy(x, y + 6); printf("▤                              ▤");
+		gotoxy(x, y + 7); printf("▤▤▤▤▤▤▤▤▤▤▤▤▤▤▤▤▤");
+		system("pause");
+		system("cls");
+		game();
+	}
+
