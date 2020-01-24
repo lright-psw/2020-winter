@@ -1,0 +1,42 @@
+#pragma once
+#include <stdio.h>
+#include <windows.h>
+#include<time.h>
+#include<stdlib.h>
+#include<conio.h>
+#include <string.h> 
+
+/*
+음악패일 사용조건 주의사항
+-어떤 . way 파일을 마우스 오른쪽 버튼으로 누르면 속성이 뜨게 되는데, 파일의 겨로를 보면
+D:W파일w자료tw만들 자료
+이런식으로 뜨게 된다.
+
+-Playsound 함수의 경우 .way파일만 재생이 가능
+-Playsound 함수는 동시에 다른 음악과 가은 way 파일을 재생 할 수 없기 때문에 
+PlaySound(NULL,0,0); 을 사용하면 종료된다.
+*/
+#define LENGTH  10     //랭킹
+#define MAX_INPUT 10  //랭킹
+#define UP_SET 0
+#define DOWN_SET 1
+#define ENTER_SET 2
+#define ENTER 13
+#define MapMaxX 40   // X 가로STAR 떨어지는 값
+#define MapMaxY 49   // Y 세로 STAR 떨어지는 값 X*2*Y)
+#define Final 300 // 게임의 끝 
+
+void asdf();
+void rank_sistem();
+void game();
+void stone();
+void FramePrinter();
+void AddStar();
+void removeCursor(); //커서 지우는 함수
+int map[MapMaxY][MapMaxX];
+enum { empty, wall, star };
+void GameOver();
+void GameClear();
+void GotoXY(int, int);
+void Level2();
+void Level3();
