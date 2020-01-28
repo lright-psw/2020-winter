@@ -29,17 +29,15 @@ void game() {
 		
 		
 		GotoXY(0, 49);
-
-		{
-			printf("SCORE : %d", score);
-			score += 1;
-		}
+		printf("SCORE : %d", score);
+		score += 1;
+		
 		GotoXY(69, 49);
-		{
-			if (score == Final)
-				break;
-			printf("USER: ");
-		}
+		if (score == Final)
+			break;
+		
+		printf("USER: ");
+
 		if (is_collison == 1)
 			break;
 	}
