@@ -11,23 +11,23 @@ void game() {
 		AddStar();
 
 		if (GetAsyncKeyState(VK_LEFT) & 0x8000) { // 키보드 왼쪽 눌렀을 때 이동
-			if (x < 1) {// 벽 넘어가지 않게
-				x = 1;
-			}x--;
+			if (x > 1) {// 벽 넘어가지 않게
+				x--;
+			}
 		}
 
 		if (GetAsyncKeyState(VK_RIGHT) & 0x8000) { // 키보드 오른쪽 눌렀을 때 이동
-			if (x > 77) { // 벽 넘어가지 않게
-				x = 77;
-			}x++;
+			if (x < 77) { // 벽 넘어가지 않게
+				x++;
+			}
 		}
 
 		GotoXY(x, y);
 		printf("▲");
-		Sleep(10);
-		card(0, 0);
-		GotoXY(0, 48);
-		stone(); // "■" *40   //printf로 계속해서 벽을 뿌려줌
+		
+		Sleep(33);
+		
+		
 		GotoXY(0, 49);
 
 		{
